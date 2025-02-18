@@ -19,9 +19,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
+  // if (req.method !== 'POST') {
+  //   return res.status(405).json({ message: 'Method Not Allowed' });
+  // }
 
   const { username, password, email, phone, role = 'user' }: User = req.body;
 
