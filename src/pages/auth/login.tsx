@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 import { GoShieldLock } from "react-icons/go";
-import '@/styles/auth/login.css';
+// import '@/styles/auth/login.css';
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";

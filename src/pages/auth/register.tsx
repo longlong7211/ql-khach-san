@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 import { GoShieldLock } from "react-icons/go";
-import '@/styles/auth/register.css';
+// import '@/styles/auth/register.css';
 import { MdEmail } from "react-icons/md";
 import { FaPhoneFlip } from "react-icons/fa6";
 
