@@ -1,0 +1,41 @@
+.selection-container {
+  background-color: #fff;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-booking {
+  height: 38px;
+  background-color: #C19B5B;
+  padding: 0px 20px;
+  border-radius: 20px;
+  color: #fff;
+  margin-left: -40px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #C19B5B;
+}
+
+.btn-booking:hover {
+  background-color: #fff;
+  color: #C19B5B;
+}
+
+.dropdow-booking-data {
+  width: 280px;
+  background-color: #fff;
+  border: 1px solid #C19B5B;
+  border-radius: 8px;
+  padding: 20px 30px;
+  user-select: none;
+  top: 40px
+}
+
+.dropdow-booking-data input {
+  background-color: #fff;
+  border: none;
+  color: #000;
+}

@@ -1,0 +1,26 @@
+.room-maintenance {
+  background-color: bisque;
+}
+
+.room-available {
+  background-color: aquamarine;
+
+}
+
+.room-booked {
+  background-color: indianred;
+}
+
+.romview-root {
+  height: calc(100vh - 80px);
+}
+
+.roomview-list-room {
+  height: 100%;
+  overflow: scroll;
+}
+
+.roomview-header {
+  height: 50px;
+  background-color: gray;
+}

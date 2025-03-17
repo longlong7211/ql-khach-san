@@ -1,0 +1,14 @@
+.admin-body-leftSide {
+  height: calc(100vh - 70px);
+  background-color: #478DBC;
+}
+
+.body-left-item {
+  background-color: #478DBC;
+  color: #fff;
+  border-bottom: 2px solid gray;
+
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}

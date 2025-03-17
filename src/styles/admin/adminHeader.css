@@ -1,0 +1,32 @@
+.header-container {
+  background-color: #3D8DBC;
+  height: 70px;
+}
+
+.header-app-logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.header-user-name {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.header-option-item {
+  color: #fff;
+  background-color: #33759F;
+  margin-right: 3px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.header-option-selected {
+  background-color: #FFA123;
+}

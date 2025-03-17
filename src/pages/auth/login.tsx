@@ -11,10 +11,16 @@ export default function LoginPage() {
   const [user, setUser] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   function onLoginPress() {
-    axios.post('http://localhost:3000/api/login-api', { "username": user, "password": password })
+    axios.post('https://hotelmanagementapi20250217124648.azurewebsites.net/api/Auth/signin', { email: user, password: password })
       .then(function (response) {
-        if (response.data.token !== '') {
-          router.push('/')
+        console.log(response)
+        if (response.status == 200) {
+          localStorage.setItem("token", response.data.token.accessToken)
+          if (response.data.user.id === 31) {
+            router.push('/admin/dashboard')
+          } else {
+            router.push('/')
+          }
         } else {
           alert("Đăng nhập thất bại!!")
         }
