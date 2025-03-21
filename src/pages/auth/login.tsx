@@ -5,18 +5,19 @@ import { GoShieldLock } from "react-icons/go";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import apiService from "@/services/axiosClient";
 
 export default function LoginPage() {
   const router = useRouter();
   const [user, setUser] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   function onLoginPress() {
-    axios.post('https://hotelmanagementapi20250217124648.azurewebsites.net/api/Auth/signin', { email: user, password: password })
+    apiService.post('Auth/signin', { email: user, password: password })
       .then(function (response) {
         console.log(response)
-        if (response.status == 200) {
-          localStorage.setItem("token", response.data.token.accessToken)
-          if (response.data.user.id === 31) {
+        if (response.token) {
+          localStorage.setItem("token", response.token.accessToken)
+          if (response.user.id === 19) {
             router.push('/admin/dashboard')
           } else {
             router.push('/')

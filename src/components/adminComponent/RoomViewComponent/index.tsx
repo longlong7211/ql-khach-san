@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { TRoom } from "@/components/userComponent/ListRoom";
 import { IoIosAddCircle } from "react-icons/io";
 import axios from "axios";
+import apiService from "@/services/axiosClient";
 
 type TRoomType = {
   id: number;
@@ -27,9 +28,9 @@ export default function RoomView({ roomData, reloadData }: { roomData: TRoom[], 
   const [roomIdNeedEdit, setRoomIdNeedEdit] = useState<number>(-1);
 
   const handleOpenEditModal = async () => {
-    const res = await axios.get('https://hotelmanagementapi20250217124648.azurewebsites.net/api/RoomType?PageNumber=1&PageSize=50&Depth=0')
-    setRoomType(res.data.items)
-    const createListItem: MenuProps['items'] = res.data.items.map((item: any) => {
+    const res = await apiService.get('RoomType?PageNumber=1&PageSize=50&Depth=0')
+    setRoomType(res.items)
+    const createListItem: MenuProps['items'] = res.items.map((item: any) => {
       return {
         key: item.id,
         label: (
@@ -49,7 +50,7 @@ export default function RoomView({ roomData, reloadData }: { roomData: TRoom[], 
       formData.append("HotelId", "0")
       formData.append("RoomTypeId", `${typeSelected?.id}`)
       formData.append("Status", roomStatus == "Ready" ? "1" : "2")
-      const res = await axios.put(`https://hotelmanagementapi20250217124648.azurewebsites.net/api/Room/${roomIdNeedEdit}`, formData)
+      const res = await apiService.put(`https://hotelmanagementapi20250217124648.azurewebsites.net/api/Room/${roomIdNeedEdit}`, formData)
       if (res.status === 200) {
         alert("Sửa phòng thành công")
         reloadData()

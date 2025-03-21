@@ -4,6 +4,7 @@ import axios from "axios";
 import { Spin } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { TRoom } from "../userComponent/ListRoom";
+import apiService from "@/services/axiosClient";
 
 export enum ERoomStatus {
   available, booked, maintenance
@@ -35,8 +36,8 @@ export default function BodyRightSide() {
   async function getRoom() {
     setLoading(true);
     try {
-      const res = await axios.get(`https://hotelmanagementapi20250217124648.azurewebsites.net/api/RoomType?PageNumber=1&PageSize=100&Depth=1`)
-      setListRoom(res.data.items)
+      const res = await apiService.get(`RoomType?PageNumber=1&PageSize=100&Depth=1`)
+      setListRoom(res.items)
     } catch (error) {
       console.log(error)
     } finally {
